@@ -51,3 +51,4 @@ jobs:
         run: |
           docker tag ub_gitops:v${{vars.VERSION}} xy1207/ub_gitops:v${{vars.VERSION}}
           docker push xy1207/ub_gitops:v${{vars.VERSION}}
+          
