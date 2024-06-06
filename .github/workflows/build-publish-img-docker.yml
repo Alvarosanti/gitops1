@@ -45,9 +45,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Build Docker image
-        run: docker build -t ub_gitops:v${{vars.VERSION}} .
+        run: docker build -t ${vars.REPO_NAME}:v${{vars.VERSION}} .
       
       - name: Push Docker image to Docker Hub
         run: |
-          docker tag ub_gitops:v${{vars.VERSION}} xy1207/ub_gitops:v${{vars.VERSION}}
-          docker push xy1207/ub_gitops:v${{vars.VERSION}}
+          docker tag ${vars.REPO_NAME}:v${{vars.VERSION}} xy1207/${vars.REPO_NAME}:v${{vars.VERSION}}
+          docker push xy1207/${vars.REPO_NAME}:v${{vars.VERSION}}
